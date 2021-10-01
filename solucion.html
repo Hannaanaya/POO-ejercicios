@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Person {
+      constructor(first, last, age, gender, interests) {
+        this.name = {
+          first,
+          last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+      }
+      saludo() {
+        console.log(`Hola! Soy ${this.name.first}`);
+      };
+      despedida() {
+        console.log(`${this.name.first} se fue hace rato`);
+      };
+    }
+    // Instancia (Person)
+    let male = new Person('Henry', 'Solo', 25, 'male');
+    male.saludo();
+    let female = new Person('Hanna', 'Organa', 19, 'female');
+    female.despedida();
+    //Herencia
+    class Person2 extends Person {
+      constructor(first, last, age, gender, interests, subject, grade) { //polimorfismo
+        super(first, last, age, gender, interests);
+
+        this.subject = subject;
+        this.grade = grade;
+      }
+    }
+    // Instancia (Person2)
+    let snape = new Person2('Anna', 'Torres', 27, 'female', 'music', 'Subject', 2);
+    snape.saludo();
+    snape.despedida(); 
+    console.log(snape.age) 
+    console.log(snape.subject) 
+
+    </script>
+</body>
+</html>
